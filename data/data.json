@@ -1,0 +1,14 @@
+[
+    {
+        "z": 1.0000000,
+        "x": 69.0000000,
+        "popup": {
+            "title": "Vicces szám",
+            "address": "Valahol, igen.",
+            "image": "/data/images/1.0000000_69.0000000.webp"
+        },
+        "type": "complete",
+        "finder": "",
+        "style": "qr"
+    }
+]

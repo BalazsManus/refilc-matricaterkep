@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reFilc Matricatérkép</title>
+
+    <link rel="shortcut icon" href="/icons/filc.png" type="image/x-icon">
+
+    <!-- kétmilliárd preload tag-->
+    <link rel="preload" href="/icons/close.svg" as="image">
+    <link rel="preload" href="/icons/copyright.svg" as="image">
+    <link rel="preload" href="/icons/layers.svg" as="image">
+    <link rel="preload" href="/icons/locate.svg" as="image">
+    <link rel="preload" href="/icons/minus.svg" as="image">
+    <link rel="preload" href="/icons/pin.svg" as="image">
+    <link rel="preload" href="/icons/placeholder.png" as="image">
+    <link rel="preload" href="/icons/plus.svg" as="image">
+    <link rel="preload" href="/icons/question.svg" as="image">
+    <link rel="preload" href="/icons/sticker.svg" as="image">
+    <link rel="preload" href="/icons/stickermono.svg" as="image">
+    <link rel="preload" href="/icons/tick.svg" as="image">
+    <link rel="preload" href="/icons/toggle_off.svg" as="image">
+    <link rel="preload" href="/icons/toggle_on.svg" as="image">
+    <link rel="preload" href="/icons/stickericon.svg" as="image">
+    <link rel="preload" href="/icons/sad.svg" as="image">
+    <link rel="preload" href="/data/styles/nothanks.webp" as="image">
+    <link rel="preload" href="/data/styles/nothanks2.webp" as="image">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/css/index.css">
+
+    <link rel="stylesheet" href="/lib/leaflet/leaflet.css"/>
+    <script src="/lib/leaflet/leaflet.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="/lib/leaflet.locatecontrol/L.Control.Locate.min.css"/>
+    <script src="/lib/leaflet.locatecontrol/L.Control.Locate.min.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="/lib/leaflet.markercluster/MarkerCluster.css">
+    <link rel="stylesheet" href="/lib/leaflet.markercluster/MarkerCluster.Default.css">
+    <script src="/lib/leaflet.markercluster/leaflet.markercluster.js" charset="utf-8"></script>
+
+    <link rel="stylesheet" href="/css/spinner.css">
+    <link rel="stylesheet" href="/css/leaflet.css">
+</head>
+
+<body>
+    <div id="map" style="height: 10px;"></div>
+    <div id="attributionelement" class="attrib">
+        <div id="attributton" class="attribbutton" aria-haspopup="true">
+            <section id="attrilist" class="attribution-list" style="display: none;">
+                <h1 class="attribution-header">reFilc Matricatérkép</h1>
+                <p class="attribp"><a class="uri" href="https://leafletjs.com/">Leaflet</a> - JavaScript map library</p>
+                <div id="attriblist"></div>
+                <p class="attribp">Open Source version</p>
+            </section>
+        </div>
+    </div>
+    <div class="bgloader">
+        <div class="spinner center">
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+            <div class="spinner-blade"></div>
+        </div>
+    </div>
+    <div class="toprightcrap">
+        <div class="stickercount">
+            <p id="stickernumber"></p>
+        </div>
+        <a href="#">
+            <div class="editmap" id="editmapbutton">
+                <img src="/icons/stylus.svg" width="20px">
+            </div>
+        </a>
+    </div>
+    <div id="overlay" style="display: none;"></div>
+    <div class="editwarning" style="display: none;" id="editwarning">
+        <div class="editwarningpopup">
+            <a href="#" onclick="overlay.style.display='none';editwarning.style.display='none';">
+                <img class="relativeclosebutton" src="/icons/close.svg" width="20px" height="20px">
+            </a>
+            <div class="editwarnheader">
+                <h1>Nincs rajta,<br>
+                    netán leszedték?</h1>
+                <p>Tölts ki egy rövid kérdőívet, és segíts<br>
+                    ezt a térképet a lehető legfrissebben tartani!</p>
+            </div>
+            <a href="https://forms.gle/gCpWT2j4qARYVCz58">
+                <div class="editwarnbutton">
+                    <p>Kitöltöm</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script src="/js/variables.js"></script>
+    <script src="/js/preinit.js"></script>
+    <script src="/js/mapinit.js"></script>
+    <script src="/js/datafetch.js"></script>
+    <script src="/js/dynamicheight.js"></script>
+    <script src="/js/extrainit.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var editmap = document.getElementById('editmapbutton');
+    var editwarning = document.getElementById('editwarning');
+    var attributionLink = document.getElementById('attributton');
+    var attributionList = document.getElementById('attrilist');
+    var overlay = document.getElementById('overlay');
+
+    editmap.addEventListener('click', function(event) {
+        editwarning.style.display = 'flex';
+        overlay.style.display = 'block';
+        event.stopPropagation();
+    });
+
+    editwarning.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        editwarning.style.display = 'none';
+    });
+
+    attributionLink.addEventListener('click', function() {
+        attributionList.style.display =  'block';
+    });
+
+    attributionLink.addEventListener('mouseover', function() {
+        attributionList.style.display = 'block';
+    });
+
+    attributionLink.addEventListener('mouseout', function() {
+        attributionList.style.display = 'none';
+    });
+});
+    </script>
+</body>
+
+</html>

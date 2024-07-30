@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="26"
+   height="26"
+   viewBox="0 0 26 26"
+   fill="none"
+   version="1.1"
+   id="svg16"
+   sodipodi:docname="stickericon.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview16"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="31.038462"
+     inkscape:cx="13"
+     inkscape:cy="12.548947"
+     inkscape:window-width="1920"
+     inkscape:window-height="1012"
+     inkscape:window-x="0"
+     inkscape:window-y="40"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg16" />
+  <defs
+     id="defs16">
+    <filter
+       id="filter0_dd_1333_5029"
+       x="0.923828"
+       y="0.709961"
+       width="24.5762"
+       height="24.5801"
+       filterUnits="userSpaceOnUse"
+       color-interpolation-filters="sRGB">
+      <feFlood
+         flood-opacity="0"
+         result="BackgroundImageFix"
+         id="feFlood3" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+         result="hardAlpha"
+         id="feColorMatrix3" />
+      <feOffset
+         dy="1"
+         id="feOffset3" />
+      <feGaussianBlur
+         stdDeviation="0.85"
+         id="feGaussianBlur3" />
+      <feComposite
+         in2="hardAlpha"
+         operator="out"
+         id="feComposite3" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
+         id="feColorMatrix4" />
+      <feBlend
+         mode="normal"
+         in2="BackgroundImageFix"
+         result="effect1_dropShadow_1333_5029"
+         id="feBlend4" />
+      <feColorMatrix
+         in="SourceAlpha"
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+         result="hardAlpha"
+         id="feColorMatrix5" />
+      <feOffset
+         dy="1"
+         id="feOffset5" />
+      <feGaussianBlur
+         stdDeviation="2.25"
+         id="feGaussianBlur5" />
+      <feComposite
+         in2="hardAlpha"
+         operator="out"
+         id="feComposite5" />
+      <feColorMatrix
+         type="matrix"
+         values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"
+         id="feColorMatrix6" />
+      <feBlend
+         mode="normal"
+         in2="effect1_dropShadow_1333_5029"
+         result="effect2_dropShadow_1333_5029"
+         id="feBlend6" />
+      <feBlend
+         mode="normal"
+         in="SourceGraphic"
+         in2="effect2_dropShadow_1333_5029"
+         result="shape"
+         id="feBlend7" />
+    </filter>
+    <linearGradient
+       id="paint0_linear_1333_5029"
+       x1="13.2119"
+       y1="19.7896"
+       x2="13.2119"
+       y2="4.20996"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#305DB6"
+         id="stop7" />
+      <stop
+         offset="1"
+         stop-color="#3972E2"
+         id="stop8" />
+    </linearGradient>
+    <linearGradient
+       id="paint1_linear_1333_5029"
+       x1="15.4238"
+       y1="7.70996"
+       x2="10.9238"
+       y2="19.71"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#DADADA"
+         id="stop9" />
+      <stop
+         offset="0.094639"
+         stop-color="#DCDCDC"
+         id="stop10" />
+      <stop
+         offset="0.19477"
+         stop-color="#F9F9F9"
+         id="stop11" />
+      <stop
+         offset="0.452282"
+         stop-color="#D8D8D8"
+         id="stop12" />
+      <stop
+         offset="0.534564"
+         stop-color="#EFEEEE"
+         id="stop13" />
+      <stop
+         offset="0.642104"
+         stop-color="#CCCCCC"
+         id="stop14" />
+      <stop
+         offset="0.766595"
+         stop-color="#C2C2C2"
+         id="stop15" />
+      <stop
+         offset="1"
+         stop-color="#737373"
+         id="stop16" />
+    </linearGradient>
+  </defs>
+  <ellipse
+     style="fill:#b3b3b3"
+     id="path16"
+     cx="13.080545"
+     cy="12.516728"
+     rx="9.5365553"
+     ry="9.1660471" />
+</svg>
